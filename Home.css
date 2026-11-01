@@ -1,0 +1,704 @@
+
+/* 
+   CRAVELY WEBSITE
+   */
+
+:root {
+    --black: #111111;
+    --dark: #1B1B1B;
+    --red: #F02735;
+    --green: #2BBE55;
+    --white: #FFFFFF;
+    --gray: #B8B8B8;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--black);
+    color: var(--white);
+    font-family: 'DM Sans', sans-serif;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4, .logo, .footer-logo {
+    font-family: 'Outfit', sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/* =====================================
+   NAVBAR
+===================================== */
+
+.main-header {
+    background: var(--black);
+    border-bottom: 1px solid rgba(240, 39, 53, 0.35);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    min-height: 82px;
+    padding: 17px 0;
+}
+
+.logo {
+    color: var(--white) !important;
+    font-size: 35px;
+    font-weight: 900;
+    letter-spacing: -1.5px;
+    transition: 0.3s;
+}
+
+.logo span {
+    color: var(--red);
+}
+
+.logo:hover {
+    transform: scale(1.04);
+}
+
+.navbar-nav {
+    gap: 9px;
+}
+
+.nav-link {
+    color: var(--white) !important;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 12px 10px !important;
+    position: relative;
+    transition: 0.3s;
+}
+
+.nav-link::after {
+    content: "";
+    position: absolute;
+    bottom: 4px;
+    left: 10px;
+    width: 0;
+    height: 2px;
+    background: var(--red);
+    transition: 0.3s;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: calc(100% - 20px);
+    color: red;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--red) !important;
+}
+
+
+/* Cart */
+
+.cart-link {
+    font-size: 22px;
+}
+
+.cart-link::after {
+    display: none;
+}
+
+.cart-link:hover {
+    color: var(--red) !important;
+    transform: translateY(-3px);
+}
+
+.cart-count {
+    background: var(--red);
+    color: var(--white);
+    font-size: 10px;
+    width: 17px;
+    height: 17px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+
+/* Login */
+
+.login-btn {
+    display: inline-block;
+    padding: 10px 22px;
+    border: 1px solid var(--red);
+    border-radius: 5px;
+    color: var(--white);
+    font-size: 13px;
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+.login-btn:hover {
+    background: var(--red);
+    color: var(--white);
+    transform: translateY(-3px);
+}
+
+
+/* Signup */
+
+.signup-btn {
+    display: inline-block;
+    padding: 11px 23px;
+    background: var(--red);
+    border: 1px solid var(--red);
+    border-radius: 5px;
+    color: var(--white);
+    font-size: 13px;
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+.signup-btn:hover {
+    background: transparent;
+    color: var(--red);
+    transform: translateY(-3px);
+}
+
+
+/* Mobile Toggle */
+
+.navbar-toggler {
+    border: 1px solid var(--red);
+    color: var(--white);
+    font-size: 25px;
+}
+
+.navbar-toggler:focus {
+    box-shadow: 0 0 0 2px rgba(240, 39, 53, 0.25);
+}
+
+
+/* =====================================
+   FULL BACKGROUND HERO SECTION
+===================================== */
+
+.hero-section {
+    min-height: 650px;
+    height: calc(100vh - 82px);
+    max-height: 850px;
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    background-image: url("hero.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    overflow: hidden;
+}
+
+
+/* Dark Overlay */
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.96) 0%,
+            rgba(0, 0, 0, 0.85) 35%,
+            rgba(0, 0, 0, 0.48) 65%,
+            rgba(0, 0, 0, 0.18) 100%
+        );
+
+    z-index: 1;
+}
+
+
+/* Hero Content */
+
+.hero-container {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-content {
+    padding: 35px 30px;
+    animation: fadeLeft 1s ease;
+}
+
+
+/* Welcome Tag */
+
+.hero-tag {
+    color: var(--red);
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    margin-bottom: 25px;
+}
+
+.hero-tag span {
+    display: inline-block;
+    width: 32px;
+    height: 3px;
+    background: var(--red);
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+
+/* Main Heading */
+
+.hero-content h1 {
+    color: var(--white);
+    font-size: clamp(48px, 5.5vw, 76px);
+    font-weight: 900;
+    line-height: 1.08;
+    letter-spacing: -2px;
+    margin-bottom: 27px;
+}
+
+.hero-content h1 span {
+    color: var(--red);
+}
+
+
+/* Description */
+
+.hero-description {
+    color: #E0E0E0;
+    font-size: 16px;
+    line-height: 1.9;
+    max-width: 520px;
+    margin-bottom: 32px;
+}
+
+
+/* Hero Buttons */
+
+.hero-buttons {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.explore-btn,
+.chef-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    padding: 15px 25px;
+    border-radius: 5px;
+
+    font-size: 14px;
+    font-weight: 800;
+
+    transition: 0.3s ease;
+}
+
+
+/* Explore Button */
+
+.explore-btn {
+    background: var(--red);
+    color: var(--white);
+    border: 1px solid var(--red);
+    box-shadow: 0 7px 25px rgba(240, 39, 53, 0.25);
+}
+
+.explore-btn:hover {
+    background: var(--green);
+    border-color: var(--green);
+    color: var(--black);
+    transform: translateY(-5px);
+}
+
+
+/* Become Chef Button */
+
+.chef-btn {
+    color: var(--white);
+    border: 1px solid rgba(255, 255, 255, 0.65);
+    background: rgba(0, 0, 0, 0.25);
+}
+
+.chef-btn:hover {
+    background: var(--red);
+    border-color: var(--red);
+    color: var(--white);
+    transform: translateY(-5px);
+}
+
+
+/* Hero Note */
+
+.hero-note {
+    color: var(--white);
+    font-size: 13px;
+    margin-top: 32px;
+}
+
+.hero-note i {
+    color: var(--green);
+    margin-right: 7px;
+}
+
+
+/* Image Caption */
+
+.hero-caption {
+    position: absolute;
+    bottom: 28px;
+    right: 35px;
+    z-index: 3;
+
+    background: rgba(17, 17, 17, 0.9);
+    color: var(--white);
+
+    border: 1px solid var(--red);
+    border-radius: 5px;
+
+    padding: 13px 18px;
+
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.hero-caption span {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--green);
+    margin-right: 8px;
+}
+
+
+/* =====================================
+   SIGNUP SECTION
+===================================== */
+
+.signup-section {
+    background: var(--dark);
+    border-top: 1px solid rgba(240, 39, 53, 0.4);
+    padding: 85px 20px;
+}
+
+.signup-heading {
+    text-align: center;
+    max-width: 680px;
+    margin: 0 auto 45px;
+}
+
+.section-tag {
+    color: var(--red);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+}
+
+.signup-heading h2 {
+    color: var(--white);
+    font-size: 40px;
+    font-weight: 900;
+    margin-bottom: 15px;
+}
+
+.signup-heading h2 span {
+    color: var(--red);
+}
+
+.signup-heading p:last-child {
+    color: var(--gray);
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+
+/* Form Box */
+
+.signup-form-wrapper {
+    max-width: 750px;
+    margin: auto;
+    padding: 40px;
+
+    background: var(--black);
+    border: 1px solid #383838;
+    border-radius: 12px;
+
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.35);
+}
+
+.signup-form-wrapper label {
+    display: block;
+    color: var(--white);
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 9px;
+}
+
+.signup-form-wrapper .form-control,
+.signup-form-wrapper .form-select {
+    background: #202020;
+    color: var(--white);
+    border: 1px solid #444444;
+    border-radius: 5px;
+
+    padding: 13px;
+    min-height: 47px;
+
+    font-size: 13px;
+    transition: 0.3s;
+}
+
+.signup-form-wrapper .form-control::placeholder {
+    color: #999999;
+}
+
+.signup-form-wrapper .form-control:focus,
+.signup-form-wrapper .form-select:focus {
+    background: #202020;
+    color: var(--white);
+    border-color: var(--red);
+    box-shadow: 0 0 8px rgba(240, 39, 53, 0.2);
+}
+
+.signup-form-wrapper .form-select option {
+    background: var(--black);
+    color: var(--white);
+}
+
+
+/* Create Account */
+
+.create-account-btn {
+    background: var(--red);
+    color: var(--white);
+    border: none;
+
+    padding: 14px 35px;
+    border-radius: 5px;
+
+    font-size: 14px;
+    font-weight: 800;
+
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.create-account-btn:hover {
+    background: var(--green);
+    color: var(--black);
+    transform: translateY(-4px);
+}
+
+.create-account-btn i {
+    margin-left: 8px;
+}
+
+.login-text {
+    color: var(--gray);
+    text-align: center;
+    font-size: 13px;
+    margin-top: 25px;
+}
+
+.login-text a {
+    color: var(--red);
+    font-weight: 800;
+}
+
+.login-text a:hover {
+    color: var(--green);
+}
+
+
+/* =====================================
+   FOOTER
+===================================== */
+
+.main-footer {
+    background: var(--black);
+    padding: 40px 0 15px;
+    border-top: 1px solid #333333;
+}
+
+.footer-logo {
+    color: var(--white);
+    font-size: 32px;
+    font-weight: 900;
+}
+
+.footer-logo span {
+    color: var(--red);
+}
+
+.main-footer p {
+    color: var(--gray);
+    font-size: 13px;
+    margin-top: 8px;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin-top: 22px;
+}
+
+.footer-links a {
+    color: var(--gray);
+    font-size: 13px;
+    transition: 0.3s;
+}
+
+.footer-links a:hover {
+    color: var(--red);
+}
+
+.footer-line {
+    width: 100%;
+    height: 1px;
+    background: #333333;
+    margin: 25px 0;
+}
+
+.main-footer .copyright {
+    font-size: 11px;
+}
+
+
+/* =====================================
+   ANIMATIONS
+===================================== */
+
+@keyframes fadeLeft {
+
+    from {
+        opacity: 0;
+        transform: translateX(-40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+}
+
+
+/* =====================================
+   RESPONSIVE DESIGN
+===================================== */
+
+@media (max-width: 1199px) {
+
+    .navbar-nav {
+        align-items: flex-start !important;
+        padding-top: 15px;
+    }
+
+    .nav-item {
+        margin: 4px 0;
+    }
+
+}
+
+
+@media (max-width: 991px) {
+
+    .hero-section {
+        min-height: 650px;
+        height: auto;
+        background-position: center;
+    }
+
+    .hero-overlay {
+        background: rgba(0, 0, 0, 0.78);
+    }
+
+    .hero-content {
+        padding: 70px 25px;
+    }
+
+    .hero-content h1 {
+        font-size: 58px;
+    }
+
+    .hero-caption {
+        right: 20px;
+        bottom: 18px;
+    }
+
+}
+
+
+@media (max-width: 576px) {
+
+    .logo {
+        font-size: 28px;
+    }
+
+    .hero-section {
+        min-height: 620px;
+        background-position: center;
+    }
+
+    .hero-content {
+        padding: 55px 15px 85px;
+    }
+
+    .hero-content h1 {
+        font-size: 43px;
+        letter-spacing: -1px;
+    }
+
+    .hero-description {
+        font-size: 14px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .explore-btn,
+    .chef-btn {
+        width: 100%;
+    }
+
+    .hero-caption {
+        left: 15px;
+        right: auto;
+        bottom: 15px;
+        font-size: 9px;
+    }
+
+    .signup-heading h2 {
+        font-size: 29px;
+    }
+
+    .signup-form-wrapper {
+        padding: 25px 18px;
+    }
+
+}
